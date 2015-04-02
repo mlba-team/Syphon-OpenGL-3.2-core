@@ -44,7 +44,7 @@ typedef struct {
     self = [super initForName:name protocol:protocolName invalidationHandler:handler];
 	if (self)
 	{
-		_port = [[[NSMachBootstrapServer sharedInstance] portForName:name] retain];
+        _port = (NSMachPort*)[[[NSMachBootstrapServer sharedInstance] portForName:name] retain];
 	}
 	return self;
 }
