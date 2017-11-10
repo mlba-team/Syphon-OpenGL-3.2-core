@@ -53,10 +53,10 @@ target_link_libraries(Syphon
     ${COCOA}
 )
 
-mz_target_props(Syphon)
 set_target_properties( Syphon PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/include"
 )
 
 set_property(TARGET Syphon PROPERTY FRAMEWORK TRUE)
 set_property(TARGET Syphon PROPERTY PUBLIC_HEADER ${HEADER})
+mz_target_props(Syphon)
