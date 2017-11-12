@@ -33,11 +33,6 @@ file(GLOB HEADER include/*.h)
 
 mz_use_default_compiler_settings()
 
-# assume an installation
-include_directories(
-    include
-)
-
 source_group(src FILES ${SRC})
 source_group(includes FILES ${HEADER})
 
@@ -53,8 +48,8 @@ target_link_libraries(Syphon
     ${COCOA}
 )
 
-set_target_properties( Syphon PROPERTIES
-    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_LIST_DIR}/include"
+target_include_directories( Syphon
+    PUBLIC "${CMAKE_CURRENT_LIST_DIR}/include"
 )
 
 set_property(TARGET Syphon PROPERTY FRAMEWORK TRUE)
