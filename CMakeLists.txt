@@ -52,6 +52,11 @@ target_include_directories( Syphon
     PUBLIC "${CMAKE_CURRENT_LIST_DIR}/include"
 )
 
-set_property(TARGET Syphon PROPERTY FRAMEWORK TRUE)
-set_property(TARGET Syphon PROPERTY PUBLIC_HEADER ${HEADER})
+set_target_properties( Syphon PROPERTIES
+    FRAMEWORK TRUE
+    MACOSX_FRAMEWORK_IDENTIFIER "info.v002.Syphon"
+    MACOSX_FRAMEWORK_SHORT_VERSION_STRING "0.0.2"
+    MACOSX_FRAMEWORK_BUNDLE_VERSION "insidMWM/Syphon-OpenGL-3.2-core"
+    PUBLIC_HEADER "${HEADER}"
+)
 mz_target_props(Syphon)
